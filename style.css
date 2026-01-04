@@ -1,0 +1,257 @@
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #dff3fd, #e7f8ff, #ffffff);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+@keyframes gradientMove {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+/* Soap bubble floating effect */
+body::before {
+  content: "🫧";
+  font-size: 50px;
+  position: fixed;
+  top: 20px;
+  left: 10px;
+  opacity: 0.2;
+}
+
+body::after {
+  content: "🧺";
+  font-size: 70px;
+  position: fixed;
+  bottom: 20px;
+  right: 15px;
+  opacity: 0.15;
+}
+
+/* ============================
+   NAVIGATION BAR
+   ============================ */
+
+.nav {
+  background: #4ea9ff;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border-bottom: 3px solid #81d4fa;
+}
+
+.nav a {
+  color: white;
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  color: #e0f7ff;
+  text-shadow: 0 0 8px white;
+}
+
+/* ============================
+   MAIN CONTENT BOX
+   ============================ */
+
+.container {
+  max-width: 500px;
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(6px);
+  margin: 60px auto;
+  padding: 28px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  border: 2px solid #b7e6ff;
+  position: relative;
+}
+
+.container::before {
+  content: "🧼";
+  font-size: 38px;
+  position: absolute;
+  top: -15px;
+  right: -15px;
+}
+
+.container::after {
+  content: "🌀";
+  font-size: 40px;
+  position: absolute;
+  bottom: -18px;
+  left: -18px;
+  opacity: 0.6;
+}
+
+h1, h2 {
+  text-align: center;
+  color: #1976d2;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+/* WRAPPER FORM */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;     /* <-- bikin input & tombol center */
+  width: 100%;
+}
+
+/* INPUT / SELECT / BUTTON */
+input, select, button {
+  width: 90%;
+  padding: 14px;
+  border-radius: 12px;
+  border: 2px solid #bde0ff;
+  font-size: 15px;
+  margin-top: 12px;
+
+  background: white;
+  display: block;
+  margin-left: auto;      
+  margin-right: auto;     
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #4ea9ff;
+  box-shadow: 0 0 8px rgba(78,169,255,0.4);
+}
+
+button {
+  background: #4ea9ff;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #1b83d4;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transform: translateY(-2px);
+}
+
+
+/* ============================
+   DASHBOARD CARDS
+   ============================ */
+
+.dashboard {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.card {
+  background: #f8fcff;
+  padding: 25px;
+  border-radius: 20px;
+  text-align: center;
+  border: 2px solid #b7e6ff;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+  transition: 0.3s;
+  position: relative;
+}
+
+.card::before {
+  content: "👕";
+  font-size: 28px;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+}
+
+.card h3 {
+  margin: 0;
+  color: #1769aa;
+  font-weight: 700;
+}
+
+.card a {
+  display: block;
+  margin-top: 12px;
+  font-weight: bold;
+  color: #1e88e5;
+  text-decoration: none;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  background: #e8f7ff;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.18);
+}
+
+/* ============================
+   TABLE
+   ============================ */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+table th, table td {
+  padding: 14px;
+  border-bottom: 1px solid #d5e8ff;
+}
+
+table th {
+  background: #cfe9ff;
+  font-weight: 700;
+}
+
+/* ============================
+   INFO BOX
+   ============================ */
+
+.info-box {
+  background: #eaf6ff;
+  border-left: 5px solid #4ea9ff;
+  padding: 18px;
+  margin-top: 20px;
+  border-radius: 12px;
+}
+
+
+.back-btn {
+  display: inline-block;
+  margin: 20px;
+  padding: 10px 16px;
+  background: #4ea9ff;
+  color: white;
+  font-weight: 600;
+  border-radius: 10px;
+  text-decoration: none;
+  border: 2px solid #bde0ff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: 0.25s;
+}
+
+.back-btn:hover {
+  background: #1b83d4;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.22);
+}
+
+.back-btn::after {
+  content: " 🧺";
+}

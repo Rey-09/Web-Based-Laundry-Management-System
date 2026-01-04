@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Laundry Management System</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .page { display: none; }
+    .page.active { display: block; }
+    .back-btn { cursor: pointer; display: inline-block; margin-bottom: 15px; }
+  </style>
+</head>
+
+<body>
+
+<!-- LOGIN -->
+<div id="login" class="page active login-wrapper">
+  <div class="container">
+    <h1>Login</h1>
+    <input type="text" placeholder="Email">
+    <input type="password" placeholder="Password">
+    <button onclick="showPage('dashboard')">Login</button>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboard" class="page">
+  <div class="container">
+    <h2>Dashboard</h2>
+
+    <div class="dashboard">
+      <div class="card"><h3>Create Order</h3><a onclick="showPage('order')">Open</a></div>
+      <div class="card"><h3>Input Weight</h3><a onclick="showPage('weight')">Open</a></div>
+      <div class="card"><h3>Track Order</h3><a onclick="showPage('track')">Open</a></div>
+      <div class="card"><h3>Update Status</h3><a onclick="showPage('status')">Open</a></div>
+      <div class="card"><h3>Customers</h3><a onclick="showPage('customers')">Open</a></div>
+      <div class="card"><h3>Reports</h3><a onclick="showPage('reports')">Open</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- CREATE ORDER -->
+<div id="order" class="page">
+  <a class="back-btn" onclick="showPage('dashboard')">⬅ Back</a>
+  <div class="container">
+    <h2>Create New Order</h2>
+    <select>
+      <option>Wash</option>
+      <option>Wash & Iron</option>
+      <option>Express</option>
+    </select>
+    <input type="text" placeholder="Name">
+    <input type="number" placeholder="Phone Number">
+    <input type="number" placeholder="Weight (kg)">
+    <input type="text" placeholder="Pickup Address">
+    <button>Create Order</button>
+  </div>
+</div>
+
+<!-- INPUT WEIGHT -->
+<div id="weight" class="page">
+  <a class="back-btn" onclick="showPage('dashboard')">⬅ Back</a>
+  <div class="container">
+    <h2>Input Actual Weight</h2>
+    <input type="text" placeholder="Order ID">
+    <input type="number" placeholder="Actual Weight (kg)">
+    <button>Submit</button>
+  </div>
+</div>
+
+<!-- UPDATE STATUS -->
+<div id="status" class="page">
+  <a class="back-btn" onclick="showPage('dashboard')">⬅ Back</a>
+  <div class="container">
+    <h2>Update Laundry Status</h2>
+    <input type="text" placeholder="Order ID">
+    <select>
+      <option>Received</option>
+      <option>Washing</option>
+      <option>Drying</option>
+      <option>Ironing</option>
+      <option>Ready</option>
+      <option>Delivered</option>
+    </select>
+    <button>Update</button>
+  </div>
+</div>
+
+<!-- TRACK ORDER -->
+<div id="track" class="page">
+  <a class="back-btn" onclick="showPage('dashboard')">⬅ Back</a>
+  <div class="container">
+    <h2>Track Order</h2>
+    <input type="text" placeholder="Order ID">
+    <button>Check</button>
+    <div class="info-box">
+      <strong>Status:</strong> Washing <br><br>
+      <strong>Last Update:</strong> 15 Nov 2025
+    </div>
+  </div>
+</div>
+
+<!-- CUSTOMERS -->
+<div id="customers" class="page">
+  <a class="back-btn" onclick="showPage('dashboard')">⬅ Back</a>
+  <div class="container">
+    <h2>Customer Management</h2>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Order ID</th>
+        <th>Phone</th>
+        <th>Action</th>
+      </tr>
+      <tr>
+        <td>John Doe</td>
+        <td>0001</td>
+        <td>0812345678</td>
+        <td>Edit | Delete</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<!-- REPORTS -->
+<div id="reports" class="page">
+  <a class="back-btn" onclick="showPage('dashboard')">⬅ Back</a>
+  <div class="container">
+    <h2>Reports</h2>
+    <button>Download Daily Report</button>
+    <button>Download Monthly Report</button>
+  </div>
+</div>
+
+<!-- SCRIPT -->
+<script>
+  function showPage(pageId) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById(pageId).classList.add('active');
+  }
+</script>
+
+</body>
+</html>
